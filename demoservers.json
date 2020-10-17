@@ -1,0 +1,15 @@
+[{
+    "ParameterKey": "EnvironmentName",
+    "ParameterValue": "UdacityProject"
+},{
+    "ParameterKey": "ImageId",
+    "ParameterValue": "ami-06e54d05255faf8f6"
+},
+{
+    "ParameterKey": "KeyName",
+    "ParameterValue": "udacity.pem"
+},
+{
+    "ParameterKey": "Ec2Role",
+    "ParameterValue": "EC2s3readonly"
+}]
