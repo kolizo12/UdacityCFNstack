@@ -1,0 +1,7 @@
+Create the VPC network STACK
+=====
+aws cloudformation create-stack --stack-name network-stack --region us-west-2 --template-body file://Udacitynetwork-vpc.yml --parameters file://udacityparameters.json
+
+Create the Server stack
+====
+aws cloudformation create-stack --stack-name servers-stack1 --region us-west-2 --template-body file://demoserver.yml --parameters file://demoservers.json
