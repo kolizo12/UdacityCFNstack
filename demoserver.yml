@@ -68,11 +68,13 @@ Resources:
                   apt-get install apache2 -y
                   systemctl start apache2.service
                   cd /var/www/html
-                  echo "Udacity Demo Web Server Up and Running!" > index.html
+                  aws s3 cp s3://udacity-kola-1/Udacitynew.zip .
+                  unzip -o Udacitynew.zip
+                #  echo "Udacity Demo Web Server Up and Running!" > index.html
             ImageId: !Ref ImageId
             SecurityGroups:
             - Ref: WebServerSecGroup
-            InstanceType: t2.micro
+            InstanceType: t3.small
             BlockDeviceMappings:
             - DeviceName: "/dev/sdk"
               Ebs:
@@ -150,4 +152,4 @@ Resources:
 Outputs:
   BackupLoadBalancerDNSName:
     Description: The DNSName of the backup load balancer
-    Value: !GetAtt WebAppLB.DNSName
+    Value: !Join ["",["http://",!GetAtt  WebAppLB.DNSName]]
