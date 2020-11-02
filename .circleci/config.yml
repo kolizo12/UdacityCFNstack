@@ -18,10 +18,10 @@ jobs:
 workflows:
   welcome:
     jobs:
-      - create_infrastructure
+      - create_infrastructure_VPC
       - create_infrastructure_server:
           requires:
-            - create_infrastructure
+            - create_infrastructure_VPC
       #- analyze:
       #    requires:
       #      - test
