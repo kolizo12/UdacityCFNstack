@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - run: aws cloudformation create-stack --stack-name network-stack --region us-west-2 --template-body file://Udacitynetwork-vpc.yml --parameters file://udacityparameters.json
-      - run: sleep 150
+      - run: sleep 300
 
   create_infrastructure_server:
     <<: *shareimage
